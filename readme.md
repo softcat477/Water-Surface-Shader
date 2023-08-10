@@ -1,11 +1,11 @@
-# Water Surface Shader
+# Water Surface Shader / Buoyancy
 > in Unity's URP pipeline!
 > Make sure to enable depth texture and opaque texture!
 
 ![](src/Teaser.gif)
+![](src/Buoyancy.gif)
 
-## Parameters:
-
+## Water Surface Shader
 ![](src/Toggle.png)
 
 * `Show Depth/Screen Position/Underwater Depth/.../Final`: Toggle each to show individual features that make up this feature. **Toggle Show Final to show the complete shader**.
@@ -40,3 +40,12 @@ Ripple only shows up near objects.
 ![](src/Wave.png)
 * `Wave`: Wave motion is controlled by three Trochoid waves: Wave A/B/C
 * `Steepness` controls the amplitude of each wave. The sum of the steepness of three waves should not be greater than 1.0, or you'll get funny artifacts.
+
+## Buoyancy
+![](src/Buoyancy_param.png)
+1. Attach the `Buoyancy.cs` script.
+2. Create buoyancy effectors ad child game objects.
+3. Add effectors to the `Anchors` variable.
+4. Assign the water surface to the `Water Surface` variable.
+5. Change `Volume Per Distance` to adjust the buoyance force. The larger, the stronger the buoyance force is.
+6. Change `Drag` to adjust the drag force. A larger value means fewer floating and wobbling movements.
